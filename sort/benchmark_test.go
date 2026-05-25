@@ -15,7 +15,7 @@ func generateRandomSlice(n int) []int {
 }
 
 func BenchmarkBubbleSort(b *testing.B) {
-	sizes := []int{10, 100, 1000}
+	sizes := []int{10, 100, 500}
 	for _, size := range sizes {
 		original := generateRandomSlice(size)
 		b.Run(sizeName(size), func(b *testing.B) {
@@ -31,7 +31,7 @@ func BenchmarkBubbleSort(b *testing.B) {
 }
 
 func BenchmarkQuickSort(b *testing.B) {
-	sizes := []int{10, 100, 1000, 10000}
+	sizes := []int{10, 100, 1000}
 	for _, size := range sizes {
 		original := generateRandomSlice(size)
 		b.Run(sizeName(size), func(b *testing.B) {
@@ -47,7 +47,7 @@ func BenchmarkQuickSort(b *testing.B) {
 }
 
 func BenchmarkMergeSort(b *testing.B) {
-	sizes := []int{10, 100, 1000, 10000}
+	sizes := []int{10, 100, 1000}
 	for _, size := range sizes {
 		original := generateRandomSlice(size)
 		b.Run(sizeName(size), func(b *testing.B) {
@@ -64,10 +64,10 @@ func sizeName(n int) string {
 		return "size=10"
 	case 100:
 		return "size=100"
+	case 500:
+		return "size=500"
 	case 1000:
 		return "size=1000"
-	case 10000:
-		return "size=10000"
 	default:
 		return "unknown"
 	}

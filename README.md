@@ -10,7 +10,7 @@
 ## 快速开始
 
 ```bash
-git clone https://github.com/chengduFa/DeepTest.git
+git clone https://github.com/Hackercds/Unit-Test-for-Golang-Guide.git
 cd DeepTest
 
 # 运行所有测试
